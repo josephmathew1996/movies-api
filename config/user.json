@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Joseph Mathew",
+    "email": "josephmathew1401@gmail.com",
+    "password": "123qweasd",
+    "role_id": 1,
+    "role": "admin"
+  },
+  {
+    "name": "Joel Jacob",
+    "email": "joeljacob@gmail.com",
+    "password": "123qweasd",
+    "role_id": 2,
+    "role": "user"
+  }
+]
