@@ -2,16 +2,11 @@ package config
 
 import (
 	"log"
-	"movies-api/models"
 
 	"github.com/hifx/envconfig"
 )
 
-var (
-	Movies []models.Movie
-	Users  []models.User
-	ENV    APIConfig
-)
+var ENV APIConfig
 
 // APIConfig holds the configuration for the api
 type APIConfig struct {
@@ -39,20 +34,4 @@ func Load() {
 	if err != nil {
 		log.Fatalln("Error while loading configuration : ", err)
 	}
-	// res, err := ioutil.ReadFile("config/imdb.json")
-	// if err != nil {
-	// 	log.Fatalln("Error reading data from imdb.json file, err : ", err)
-	// }
-	// err = json.Unmarshal(res, &Movies)
-	// if err != nil {
-	// 	log.Fatalln("Error parsing json data from imdb.json file, err : ", err)
-	// }
-	// res, err = ioutil.ReadFile("config/user.json")
-	// if err != nil {
-	// 	log.Fatalln("Error reading data from user.json file, err : ", err)
-	// }
-	// err = json.Unmarshal(res, &Users)
-	// if err != nil {
-	// 	log.Fatalln("Error parsing json data from user.json file, err : ", err)
-	// }
 }

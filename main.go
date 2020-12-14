@@ -24,8 +24,6 @@ func main() {
 	}
 	log.Println("MySQL connection successfull...")
 
-	// migrations.MigrateDBData(db)
-
 	services := models.NewServices(db)
 	router := routes.Set(services)
 

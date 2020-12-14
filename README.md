@@ -18,8 +18,7 @@
 
 In the root directory,
 
-- Run `docker-compose up -d ` to start mysql and phpmyadmin services. This should create the database and the tables.
-- Run `go run main.go` to start the application. This should also pull all the dependencies. Starts on port 9000 as given from the configuration(env file shared privately) by default.
+- Run `docker-compose up` to start mysql and phpmyadmin services. This should create the database and the tables. This should also pull all the dependencies. Finally, API server will start on port 9000
 - Upon successful start up, you should see `Started HTTP server on port 9000` message.
 
 ### Running the tests
