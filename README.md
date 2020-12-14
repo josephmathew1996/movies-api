@@ -30,13 +30,13 @@ In the root directory,
 - All the test files are located in the controllers package. Run `go test -v ./controllers/` to test the controllers package
 - The tests do not depend on any external dependencies. The db interface has been mocked out in the mocks package.
 
-## API Oveview
+## API Overview
 
-- Performs all operations such as get all movies, add, udpate and delete a movie.
+- Performs all operations such as get all movies, add, update and delete a movie.
 - Handles 2 user roles (admin/user).
 - Admin has the permissions to perform all the operations while user is only able to view the movies.
 - CORS is enabled
-- Successfull login returns the `Bearer` Token (JWT format) which is needed for accessing all secured endpoints.
+- Successfull login returns the `Bearer <access_token>` (JWT format) which is needed for accessing all secured endpoints.
 - Movies searching, sorting and filtering are all implemented.
 
 ## API Methods and Status Code
