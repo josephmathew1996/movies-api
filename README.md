@@ -36,7 +36,7 @@ In the root directory,
 - Admin has the permissions to perform all the operations while user is only able to view the movies.
 - CORS is enabled
 - Successfull login returns the `Bearer <access_token>` (JWT format) which is needed for accessing all secured endpoints.
-- Token expiry is set as 60 minutes. Please update the value in the configuration file if required.
+- Token expiry is set as 60 minutes. Please update the value in the docker compose file if required.
 - Movies searching, sorting and filtering are all implemented.
 
 ## API Methods and Status Code
