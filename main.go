@@ -7,6 +7,9 @@ import (
 	"movies-api/models"
 	"movies-api/routes"
 	"net/http"
+	"os"
+	"os/signal"
+	"syscall"
 
 	"github.com/gorilla/handlers"
 )
@@ -26,9 +29,30 @@ func main() {
 	services := models.NewServices(db)
 	router := routes.Set(services)
 
-	log.Fatal(http.ListenAndServe(":"+config.ENV.ServerPort, handlers.CORS(handlers.AllowedHeaders([]string{"Content-Type", "Authorization"}), handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"}), handlers.AllowedOrigins([]string{"*"}))(router)))
+	go func() {
+		log.Fatal(http.ListenAndServe(":"+config.ENV.ServerPort, handlers.CORS(handlers.AllowedHeaders([]string{"Content-Type", "Authorization"}), handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"}), handlers.AllowedOrigins([]string{"*"}))(router)))
+	}()
 
-	if err != nil {
-		log.Fatalf("HTTP Server stopped with error %s", err)
+	log.Printf("Started HTTP server on port %s\n", config.ENV.ServerPort)
+	exitCode := waitForStop()
+	if exitCode != 0 {
+		os.Exit(exitCode)
+	}
+}
+
+func waitForStop() int {
+	okSig := make(chan os.Signal, 2)
+	signal.Notify(okSig, syscall.SIGTERM)
+	failSig := make(chan os.Signal, 2)
+	signal.Notify(failSig, syscall.SIGINT, syscall.SIGHUP, syscall.SIGQUIT)
+	for {
+		select {
+		case sig := <-okSig:
+			log.Printf("Exit OK on Signal  %s", sig)
+			return 0
+		case sig := <-failSig:
+			log.Printf("Exit FAIL on Signal  %s", sig)
+			return 2
+		}
 	}
 }
