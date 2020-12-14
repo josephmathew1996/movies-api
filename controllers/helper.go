@@ -25,14 +25,11 @@ func ProcessResponse(w http.ResponseWriter, message string, statusCode int, data
 	}
 	if statusCode != 200 {
 		response.Status = "FAILED"
-		responseJSON, _ := json.Marshal(response)
-		http.Error(w, string(responseJSON), statusCode)
-	} else {
-		w.Header().Set("Content-Type", "application/json")
-		w.WriteHeader(statusCode)
-		err := json.NewEncoder(w).Encode(response)
-		if err != nil {
-			panic(err)
-		}
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(statusCode)
+	err := json.NewEncoder(w).Encode(response)
+	if err != nil {
+		panic(err)
 	}
 }

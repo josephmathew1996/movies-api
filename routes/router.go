@@ -21,7 +21,7 @@ func Set(services models.Services) http.Handler {
 
 	r.HandleFunc("/auth", userController.Auth).Methods("POST")
 
-	r.HandleFunc("/movies", movieController.Get).Methods("GET")
+	r.HandleFunc("/movies", middleware.AuthMiddleware(movieController.Get)).Methods("GET")
 	r.HandleFunc("/movies", middleware.AuthMiddleware(movieController.Create)).Methods("POST")
 	r.HandleFunc("/movies/{id}", middleware.AuthMiddleware(movieController.Update)).Methods("PUT")
 	r.HandleFunc("/movies/{id}", middleware.AuthMiddleware(movieController.Delete)).Methods("DELETE")
