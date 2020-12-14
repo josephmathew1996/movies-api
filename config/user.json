@@ -1,14 +1,14 @@
 [
   {
-    "name": "Joseph Mathew",
-    "email": "josephmathew1401@gmail.com",
+    "name": "Admin",
+    "email": "admin@mailsac.com",
     "password": "123qweasd",
     "role_id": 1,
     "role": "admin"
   },
   {
-    "name": "Joel Jacob",
-    "email": "joeljacob@gmail.com",
+    "name": "User",
+    "email": "user@mailsac.com",
     "password": "123qweasd",
     "role_id": 2,
     "role": "user"

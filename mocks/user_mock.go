@@ -14,5 +14,5 @@ func (a UserService) GetUserByEmail(email string) (models.User, error) {
 	if email == "" {
 		return models.User{}, nil
 	}
-	return models.User{ID: 1, Name: "Joseph Mathew", Email: "josephmathew1401@gmail.com", Password: "$2a$04$F8KPSzu0962d88ZFKcyf8ua3CvD5SaWOKHcTZZ0DNC8OP8VhYHka2", Role: "admin"}, nil
+	return models.User{ID: 1, Name: "Admin", Email: "admin@mailsac.com", Password: "$2a$04$F8KPSzu0962d88ZFKcyf8ua3CvD5SaWOKHcTZZ0DNC8OP8VhYHka2", Role: "admin"}, nil
 }

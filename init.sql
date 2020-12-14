@@ -280,8 +280,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`) VALUES
-(1, 'Joseph Mathew', 'josephmathew1401@gmail.com', '$2a$04$F8KPSzu0962d88ZFKcyf8ua3CvD5SaWOKHcTZZ0DNC8OP8VhYHka2', 'admin'),
-(2, 'Joel Jacob', 'joeljacob@gmail.com', '$2a$04$moygcKt7AxvvvsTdPJRAquwvcMoIjBcp2vyttTi5OceYwfes/fhYe', 'user');
+(1, 'Admin', 'admin@mailsac.com', '$2a$04$F8KPSzu0962d88ZFKcyf8ua3CvD5SaWOKHcTZZ0DNC8OP8VhYHka2', 'admin'),
+(2, 'User', 'user@mailsac.com', '$2a$04$moygcKt7AxvvvsTdPJRAquwvcMoIjBcp2vyttTi5OceYwfes/fhYe', 'user');
 
 --
 -- Indexes for dumped tables
