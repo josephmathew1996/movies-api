@@ -26,7 +26,7 @@ In the root directory,
 In the root directory,
 
 - Run `go test -v ./...`
-- All the test files are located in the controllers package. Run `go test -v ./controllers/` to test the controllers package
+- All the test files are located in the controllers package.
 - The tests do not depend on any external dependencies. The db interface has been mocked out in the mocks package.
 
 ## API Overview
@@ -42,7 +42,7 @@ In the root directory,
 ## API Methods and Status Code
 
 - JSON is used for all requests and responses
-- Includes methods - `GET`, `POST`, `PUT`, `POST`
+- Includes methods - `GET`, `POST`, `PUT`, `DELETE`
 - Status code 200 - Success
 - Status code 401 - Unauthorized request
 - Status code 400 - Bad Request
